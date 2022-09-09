@@ -26,6 +26,8 @@ console.log('Task 1c', filter2014[0]['Home Team Goals']);
 
 //(d) Away Team goals for 2014 world cup final
 
+console.log('Task 1d', filter2014[0]['Away Team Goals']);
+
 //(e) Winner of 2014 world cup final */
 
 
