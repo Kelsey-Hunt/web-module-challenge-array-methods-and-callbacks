@@ -30,6 +30,7 @@ console.log('Task 1d', filter2014[0]['Away Team Goals']);
 
 //(e) Winner of 2014 world cup final */
 
+console.log('Task 1e', filter2014[0]['Win conditions']);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use getFinals to do the following:
