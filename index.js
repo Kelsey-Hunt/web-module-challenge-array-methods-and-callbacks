@@ -118,8 +118,16 @@ Use the higher order function `getAverageGoals` to do the following:
  
 */
 
-function getAverageGoals(/* code here */) {
-    /* code here */
+function getAverageGoals(getFinalsCB) {
+    const finalsData = getFinalsCB;
+    const totalHomeGoals = finalsData.reduce((goals, currentValue) => {
+        return goals + currentValue['Home Team Goals'];
+    }, 0);
+    const totalAwayGoals = finalsData.reduce((goals, currentValue) => {
+        return goals + currentValue['Away Team Goals'];
+    }, 0);
+    return ((totalHomeGoals + totalAwayGoals)/finalsData.length).toFixed(2);
+
  }
 
 
