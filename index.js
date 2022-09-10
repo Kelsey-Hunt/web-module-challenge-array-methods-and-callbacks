@@ -127,7 +127,6 @@ function getAverageGoals(getFinalsCB) {
         return goals + currentValue['Away Team Goals'];
     }, 0);
     return ((totalHomeGoals + totalAwayGoals)/finalsData.length).toFixed(2);
-
  }
 
 
@@ -141,12 +140,21 @@ Create a function called `getCountryWins` that takes the parameters `data` and `
 Hint: Investigate your data to find "team initials"!
 Hint: use `.reduce` */
 
-function getCountryWins(/* code here */) {
-
-    /* code here */
-
+function getCountryWins(data, teamInitials) {
+    const finalists = data.filter((item) => {
+        return item.Stage === 'Final';
+    });
+    const winnerInitials = finalists.map(item => item['Home Team Goals'] > item['Away Team Goals'] ? item['Home Team Initials'] : item['Away Team Initials']);
+    let wins = 0;   
+    const winsByInitials = winnerInitials.reduce((accumulator, currentValue) => {
+        if(currentValue === teamInitials){
+            return wins = wins + 1;
+        }
+        return wins;
+    },0);
+    return wins;
 }
-
+console.log('stretch 1', getCountryWins(fifaData, 'ITA'));
 
 
 /* 💪💪💪💪💪 Stretch 2: 💪💪💪💪💪 
